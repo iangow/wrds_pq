@@ -179,12 +179,6 @@ wrds_update_pq("feed25_comment_letters", "audit",
                       drop="^(closest|cl_text|cl_frmt_text_html)",
                       alt_table_name="feed25_comment_letters")
 
-#wrds_update_pq("feed25_comment_letters", "audit", force=True,
-#                col_types={"cl_con_id": "int32",
-#                           "cl_text": "string"},
-#                      keep="^(cl_letter_ftpfilekey|cl_text)",
-#                    alt_table_name="feed25_text")
-
 # Comment Letter Conversations
 wrds_update_pq("feed26_comment_letter_conversati", "audit",
                       drop = "^closest",

@@ -14,7 +14,7 @@ wrds_update_pq("feed56_accounting_estimates_chan", "audit",
                drop="^(match|prior|closest)",
                col_types={"accounting_estimates_cha_fke": "int32"})
 
-wrds_update_pq("feed65_impairments", "audit", force=True,
+wrds_update_pq("feed65_impairments", "audit",
                drop="^(match|prior|closest)",
                col_types={"mtrl_imprmnt_fct_key": "int32",
                           "mtrl_imprmnt_key": "int32",
@@ -44,7 +44,7 @@ wrds_update_pq("feed85_cybersecurity", "audit",
 wrds_update_pq("feed86_audit_firm_events", "audit",
                drop="^(match|prior|closest)")
 
-wrds_update_pq("feed89_pcaob_report", "audit", force=True,
+wrds_update_pq("feed89_pcaob_report", "audit",
                col_types={"auditor_report_key": "int32",
                           "auditor_affiliate_fkey": "int32",
                           "inspection_year": "int32",
