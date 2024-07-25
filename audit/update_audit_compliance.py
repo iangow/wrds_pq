@@ -51,32 +51,6 @@ wrds_update_pq("feed04_audit_fees_restated", "audit",
                                    "restatement":"boolean",
                                    "fees_pcaob_reg":"boolean"})
 
-# Audit Opinions
-wrds_update_pq("feed05_audit_opinions", "audit",
-                      drop="^(match|prior|closest)", 
-                      col_types={"audit_op_key": "int32", 
-                                   "auditor_fkey": "int32",
-                                   "file_accepted": "timestamp",
-                                   "auditor_affil_fkey": "int32",
-                                   "going_concern": "boolean",
-                                   "op_aud_pcaob": "boolean",
-                                   "eventdate_aud_fkey": "int32",
-                                   "fiscal_year_of_op": "int32"})
-
-wrds_update_pq("feed34_revised_audit_opinions", "audit",
-                      drop="^(match|closest|prior)",
-                      col_types={"audit_op_key": "int32", 
-                                   "eventdate_aud_fkey": "int32",
-                                   "integrated_audit": "boolean",
-                                   "auditor_fkey": "int32",
-                                   "auditor_affil_fkey": "int32",
-                                   "is_nth_add_op": "int32",
-                                   "going_concern": "boolean",
-                                   "op_aud_pcaob": "boolean",
-                                   "file_accepted": "timestamp",
-                                   "eventdate_aud_fkey": "int32",
-                                   "fiscal_year_of_op": "int32"})
-
 wrds_update_pq("feed06_benefit_plan_opinions", "audit", 
                       drop="^(match|closest|prior)",
                       col_types={"benefit_plan_key": "int32", 
@@ -89,24 +63,9 @@ wrds_update_pq("feed06_benefit_plan_opinions", "audit",
 wrds_update_pq("feed07_current_auditor", "audit", 
                        col_types={"auditor_key": "int32"}) 
 
-# Non-reliance restatements
-wrds_update_pq("feed09_nonreliance_restatements", "audit", 
-                        drop="^(match|closest|prior)",
-                        col_types={"res_accounting": "boolean",
-                                     "res_fraud": "boolean", 
-                                     "res_cler_err": "boolean",
-                                     "res_adverse": "boolean", 
-                                     "res_improves": "boolean", 
-                                     "res_other": "boolean",
-                                     "res_sec_invest": "boolean",
-                                     "res_begin_aud_fkey": "int32", 
-                                     "res_notif_key": "int32", 
-                                     "current_aud_fkey": "int32", 
-                                     "res_begin_aud_fkey": "int32", 
-                                     "res_end_aud_fkey": "int32",
-                                     "file_accepted": "timestamp",
-                                     "file_date_aud_fkey": "int32"})
- 
+wrds_update_pq("feed08_auditor_during", "audit", 
+                       col_types={"auditor_fkey": "int32"}) 
+
 # SOX 302 Disclosure Controls
 wrds_update_pq("feed10_sox_302_disclosure_contro", "audit",
             drop="^(prior|match|closest)",
@@ -170,12 +129,6 @@ wrds_update_pq("feed17_director_and_officer_chan", "audit",
                                      'is_cfo': 'boolean', 
                                      'is_exec_vp': 'boolean'})
                                      
-# Director and officer changes
-wrds_update_pq("feed17_director_and_officer_chan", "audit",
-                        keep="^(do_off_pers_key|do_change_text)$",
-                        col_types={"do_off_pers_key": "int32"},
-                        alt_table_name="feed17_do_change_text")
-
 # Non-timely Filer Information And Analysis
 wrds_update_pq("feed20_nt", "audit",
                       drop="^(match|closest|prior)",
@@ -189,3 +142,21 @@ wrds_update_pq("feed20_nt", "audit",
                                  "part4_3_check": "boolean",
                                  "file_accepted": "timestamp",
                                  "ten_k_trans_report": "boolean"})
+                                 
+wrds_update_pq("feed34_revised_audit_opinions", "audit",
+               drop="^(match|closest|prior)",
+               col_types={"audit_op_key": "int32", 
+                          "eventdate_aud_fkey": "int32",
+                          "integrated_audit": "boolean",
+                          "auditor_fkey": "int32",
+                                   "auditor_affil_fkey": "int32",
+                                   "is_nth_add_op": "int32",
+                                   "going_concern": "boolean",
+                                   "op_aud_pcaob": "boolean",
+                                   "file_accepted": "timestamp",
+                                   "eventdate_aud_fkey": "int32",
+                                   "fiscal_year_of_op": "int32"})                                 
+                                 
+# Non-timely Filer Information And Analysis
+wrds_update_pq("feed39_financial_restatements", "audit",
+                      drop="^(match|closest|prior)")

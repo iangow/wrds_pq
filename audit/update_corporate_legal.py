@@ -173,7 +173,7 @@ wrds_update_pq("feed21_bankruptcy_notification", "audit",
                                    "file_accepted": "timestamp",
                                    "eventdate_aud_fkey": "int32"})
 
-# Comment Letters list_|text_|iss_|
+# Comment Letters
 wrds_update_pq("feed25_comment_letters", "audit",
                       col_types={"cl_con_id": "int32"},
                       drop="^(closest|cl_text|cl_frmt_text_html)",
