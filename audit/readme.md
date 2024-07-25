@@ -1,8 +1,7 @@
 # Audit Analytics
 
 
-Data found in `audit` data library on WRDS (`/wrds/audit/sasdata/` on
-SAS server)
+Data found in `audit` schema of the WRDS PostgreSQL database.
 
 ## Introduction
 
