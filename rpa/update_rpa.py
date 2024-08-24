@@ -9,12 +9,12 @@ wrds_update_pq("rpa_entity_mappings", "ravenpack_common", sas_schema="rpa")
 
 def update_equities(year):
     updated = wrds_update_pq("rpa_djpr_equities_" + str(year), "ravenpack_dj",
-                             col_types = {"timestamp_utc": "timestamptz",
+                             col_types = {"timestamp_utc": "timestamp",
                                           "rpa_time_utc": "text",
-                                          "event_start_date_utc": "timestamptz", 
-                                          "event_end_date_utc": "timestamptz", 
-                                          "reporting_start_date_utc": "timestamptz",
-                                          "reporting_end_date_utc": "timestamptz"},
+                                          "event_start_date_utc": "timestamp", 
+                                          "event_end_date_utc": "timestamp", 
+                                          "reporting_start_date_utc": "timestamp",
+                                          "reporting_end_date_utc": "timestamp"},
                              sas_schema="rpa")
     return updated
 
