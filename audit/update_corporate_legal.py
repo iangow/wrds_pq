@@ -118,7 +118,7 @@ wrds_update_pq("feed13_legal_case_feed", "audit",
                                  'gender': 'int32'})
 
 wrds_update_pq("feed14_company_legal_party_feed", "audit",
-                       drop="^(match|prior|closest)", # web_summ
+                       drop="^(match|prior|closest)", 
                       col_types={"legal_party_key":"int32",
                                  "auditor_key":"int32",
                                     "gov_key":"int32",
@@ -185,6 +185,36 @@ wrds_update_pq("feed26_comment_letter_conversati", "audit",
                       col_types={'cl_con_id': 'int32', 
                                    'con_time_span': 'int32'})
 
+# Shareholder Activism
+wrds_update_pq("feed31_shareholder_activism", "audit",
+                       drop="^(match|prior|closest)",
+                      col_types={'active_share_key':'int32',
+                                   'active_share_rep_fkey': 'int32',
+                                   'iss_file_accepted': 'timestamp',
+                                   'rep_file_acc': 'timestamp',
+                                   'dispute_management': 'boolean',
+                                   'eventdate_aud_fkey': 'int32'})
+                                   
+# Form D
+wrds_update_pq("feed37_form_d", "audit",
+                      col_types={"form_d_key": "int32",
+                                   "authorized_representative": "boolean",
+                                   "is_business_com_tra": "boolean",
+                                   "file_accepted":"timestamp",
+                                   "is_primary": "boolean"})
+
+# Form D Most Recent Report
+wrds_update_pq("feed38_form_d_most_recent_offeri", "audit",
+                      col_types={"form_d_key": "int32", 
+                                   "file_accepted": "timestamp",
+                                   "primary_issuer_company_fkey": "int32",
+                                   "has_non_accredited_investors": "boolean",
+                                   "authorized_representative": "boolean",
+                                   "gross_proceeds_use_est": "boolean",
+                                   "is_business_com_tra": "boolean",
+                                   "total_offering_is_indefinite": "boolean",
+                                   "is_primary": "boolean"})
+                                   
 # Comment Threading
 wrds_update_pq("feed40_comment_letter_threads", "audit",
                        drop="^(match|prior|closest)",
@@ -207,42 +237,3 @@ wrds_update_pq("feed41_transfer_agents", "audit",
                                  "transfer_agent_ult_par_com_fke": "int32",
                                  "shareholder_market_fkey": "int32",
                                  "eventdate_aud_fkey": "int32"})
-
-# Tax Footnotes
-wrds_update_pq("feed32_tax_footnotes", "audit", 
-                        col_types={"tax_footnote_key": "int32",
-                                   "times_restated": "int32",
-                                   "res_notif_fkey": "int32",
-                                   "eventdate_aud_fkey": "int32",
-                                   "file_date": "date"},
-                         drop="^(match|prior|closest)")
-
-# Shareholder Activism
-wrds_update_pq("feed31_shareholder_activism", "audit",
-                       drop="^(match|prior|closest)",
-                      col_types={'active_share_key':'int32',
-                                   'active_share_rep_fkey': 'int32',
-                                   'iss_file_accepted': 'timestamp',
-                                   'rep_file_acc': 'timestamp',
-                                   'dispute_management': 'boolean',
-                                   'eventdate_aud_fkey': 'int32'})
-
-# Form D
-wrds_update_pq("feed37_form_d", "audit",
-                      col_types={"form_d_key": "int32",
-                                   "authorized_representative": "boolean",
-                                   "is_business_com_tra": "boolean",
-                                   "file_accepted":"timestamp",
-                                   "is_primary": "boolean"})
-
-# Form D Most Recent Report
-wrds_update_pq("feed38_form_d_most_recent_offeri", "audit",
-                      col_types={"form_d_key": "int32", 
-                                   "file_accepted": "timestamp",
-                                   "primary_issuer_company_fkey": "int32",
-                                   "has_non_accredited_investors": "boolean",
-                                   "authorized_representative": "boolean",
-                                   "gross_proceeds_use_est": "boolean",
-                                   "is_business_com_tra": "boolean",
-                                   "total_offering_is_indefinite": "boolean",
-                                   "is_primary": "boolean"})
