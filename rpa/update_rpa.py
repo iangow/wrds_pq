@@ -15,6 +15,7 @@ def update_equities(year):
                                           "event_end_date_utc": "timestamp", 
                                           "reporting_start_date_utc": "timestamp",
                                           "reporting_end_date_utc": "timestamp"},
+                             batched=False,
                              sas_schema="rpa")
     return updated
 
