@@ -40,7 +40,6 @@ wrds_update_pq("feed85_cybersecurity", "audit",
                           "number_of_records_lost": "int64"},
                drop="^(match|prior|closest)")
 
-
 wrds_update_pq("feed86_audit_firm_events", "audit",
                drop="^(match|prior|closest)")
 
