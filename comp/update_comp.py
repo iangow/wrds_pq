@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 from db2pq import wrds_update_pq
 
-
 wrds_update_pq("aco_pnfnda", "comp")
 wrds_update_pq("adsprate", "comp")
 wrds_update_pq("anncomp", "comp")
@@ -27,6 +26,7 @@ wrds_update_pq("g_names_ix", "comp")
 wrds_update_pq("g_names_ix_cst", "comp")
 wrds_update_pq("g_namesq", "comp")
 wrds_update_pq("g_sec_divid", "comp")
+wrds_update_pq("g_secd", "comp")
 wrds_update_pq("g_secm", "comp")
 wrds_update_pq("g_secnamesd", "comp")
 wrds_update_pq("g_security", "comp")
@@ -49,3 +49,7 @@ wrds_update_pq("seg_customer", "comp")
 wrds_update_pq("spind_mth", "comp")
 wrds_update_pq("wrds_seg_customer", "comp")
 wrds_update_pq("wrds_segmerged", "comp")
+wrds_update_pq("wrds_ciqsymbol", "ciq",
+               col_types = {'companyid':'int32',
+                            'symbolid':'int32',
+                            'objectid':'int32'})
