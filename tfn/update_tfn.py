@@ -3,7 +3,7 @@ from db2pq import wrds_update_pq
 
 updated = wrds_update_pq("amend", "tfn")
 updated = wrds_update_pq("avgreturns", "tfn", 
-                         col_types = {"buycount": "float8"})
+                         col_types = {"buycount": "float64"})
 updated = wrds_update_pq("company", "tfn")
 updated = wrds_update_pq("form144", "tfn")
 updated = wrds_update_pq("header", "tfn")
