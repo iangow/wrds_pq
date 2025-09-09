@@ -3,7 +3,7 @@ from db2pq import wrds_update_pq
 
 wrds_update_pq("aco_pnfnda", "comp")
 wrds_update_pq("adsprate", "comp")
-wrds_update_pq("anncomp", "comp")
+wrds_update_pq("anncomp", "comp_execucomp", sas_schema="comp")
 wrds_update_pq("co_adesind", "comp")
 wrds_update_pq("co_afnd2", "comp")
 wrds_update_pq("co_filedate", "comp")
